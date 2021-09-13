@@ -94,10 +94,10 @@
 	</dependencies>
 	
 	<distributionManagement>
-	    <repositor
+	    <repository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Releases Nexus Repository</name>
-	      <url> http://18.218.254.89:8081/repository/ebay-bts-releases/</url>
+	      <url>http://18.218.254.89:8081/repository/ebay-bts-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
