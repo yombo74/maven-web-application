@@ -1,0 +1,41 @@
+node {
+  def mavenHome = tool name:'maven3.8.2'
+
+  stage('1Clone') {
+    git credentialsId: 'GITHUB-CREDENTIALS', url: 'https://github.com/yombo74/maven-web-application.git'
+
+  } 
+  stage('2mavenBuild') {
+     sh "${mavenHome}/bin/mvn clean package"
+  
+  }
+  stage('3CodeQuality') {
+    sh "${mavenHome}/bin/mvn sonar:sonar"
+    
+  }
+  stage('4UploadArticats') {
+    sh "${mavenHome}/bin/mvn deploy"    
+  }
+  stage('5Deploy-UAT') {
+    deploy adapters: [tomcat9(credentialsId: '99db4dee-a45b-4b12-9c3f-0cf5b92add1e', path: '', url: 'http://18.119.13.162:8080/')], contextPath: null, war: 'target/*war'
+  
+  }
+  stage('6EmailN') {
+    emailext body: '''hello everyone
+
+build from ebay pipeline project
+
+yombo74''', subject: 'build status', to: 'developers'
+  }
+  stage('Approval'){
+     timeout(time:8, unit: 'HOURS'){
+       input message: 'please verify and approve'
+     }
+     
+  }   
+  stage{'prod-Deploy'}{
+     deploy adapters: [tomcat9(credentialsId: '99db4dee-a45b-4b12-9c3f-0cf5b92add1e', path: '', url: 'http://18.119.13.162:8080/')], contextPath: null, war: 'target/*war'
+
+
+   }
+}
