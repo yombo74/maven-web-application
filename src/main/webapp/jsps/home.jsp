@@ -3,15 +3,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-TechnologiesType" content="text/html; charset=UTF-8">
 <title>MylandmarkTech.com- Home Page</title>
 <link href="images/log4.png" rel="icon">
 </head>
 </head>
 <body>
 <h1 align="center">welcome Landmark Technologies</h1>
-<h2 align="center">supporting Ebay black friday project
-	An ideal online training  platform for DevOps and Cloud Engineers. .
+<h2 align="center">we are supporting  the Ebay Black Friday Project
+	Landmark Technologies is a software development company. .
 	class 26 would run from october 2, 2021
 	The shout of the King jesus is in our midst. His name is JESUS.  HE IS OUR SUCCESS ACCESS KEY</h2>
 <hr>
